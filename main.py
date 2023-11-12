@@ -83,9 +83,7 @@ def login():
 
 @app.route("/signup")
 def signup():
-    return oauth.auth0.authorize_redirect(
-        redirect_uri=url_for("/callback", _external=True)
-    )
+    return redirect("/login")
 
 @app.route("/events.json")
 def events():
