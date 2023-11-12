@@ -92,6 +92,7 @@ def events():
     with open("events.json") as json_file:
         data = json.load(json_file)
     return jsonify(data)
+<<<<<<< HEAD
     
 @app.route("/callback", methods=["GET", "POST"])
 def callback():
@@ -137,6 +138,8 @@ def submit():
     print(returnVal.acknowledged)
 
     return redirect("/map")
+=======
+>>>>>>> backend
 
 @app.route("/")
 def home():
