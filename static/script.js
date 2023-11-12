@@ -10,8 +10,8 @@ async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
 
   map = new Map(document.getElementById("map"), {
-    center: { lat: 43.07, lng: -89.40 },
-    zoom: 14,
+    center: { lat: 43.07207615257759, lng: -89.40075908988423 },
+    zoom: 15,
     styles: [
         {
           "featureType": "administrative.land_parcel",
@@ -70,7 +70,7 @@ async function initMap() {
     
 });
 
-  const geocoder = new google.maps.Geocoder();
+const geocoder = new google.maps.Geocoder();
 
 locations.forEach(location => {
     const { address, description } = location;
@@ -80,14 +80,12 @@ locations.forEach(location => {
             const latitude = results[0].geometry.location.lat();
             const longitude = results[0].geometry.location.lng();
 
-            // Create a marker for each location
             const marker = new google.maps.Marker({
                 position: { lat: latitude, lng: longitude },
                 map: map,
                 title: description,
             });
 
-            // Example: Show an info window with the description
             const infoWindow = new google.maps.InfoWindow({
                 content: `<strong>${description}</strong><br>${address}`,
             });
@@ -95,8 +93,6 @@ locations.forEach(location => {
                 infoWindow.open(map, marker);
             });
 
-            // Center the map on the last marker
-            map.setCenter({ lat: latitude, lng: longitude });
         } else {
             console.error("Geocoding failed:", status);
         }
