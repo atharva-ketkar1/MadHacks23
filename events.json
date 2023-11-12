@@ -4,7 +4,7 @@
     "end": "2023-11-12 23:59:59",
     "name": "MadHacks",
     "start": "2023-11-11 20:00:00",
-    "type": "campusevents"
+    "type": "Campus Events"
   },
   {
     "Address": "502 N Frances Street",
@@ -12,6 +12,6 @@
     "end": "2023-11-12 16:00:00",
     "name": "Random Party",
     "start": "2023-11-12 02:45:00",
-    "type": "party"
+    "type": "Party"
   }
 ]

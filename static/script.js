@@ -65,19 +65,19 @@ async function initMap() {
   });
 
 const icons = {
-  academics: {
+  Acedemics: {
     icon: "static/Academics.png",
   },
-  party: {
+  Party: {
     icon: "static/PartyIcon.png",
   },
-  pickup: {
+  Pickup: {
     icon: "static/Pick Up.png",
   },
-  clubs: {
+  Clubs: {
     icon: "static/extracurricular.png",
   },
-  campusevents: {
+  "Campus Events": {
     icon: "static/Campus Events.png",
   }
 };    
@@ -146,19 +146,7 @@ const geocoder = new google.maps.Geocoder();
     markers.forEach((marker) => marker.setMap(null));
 
     markers.forEach((marker) => {
-      test = ""
-      if (marker.type === "campusevents") {
-        test = "Campus Events"
-      } else if (marker.type === "clubs") {
-        test = "Clubs"
-      } else if (marker.type === "pickup") {
-        test = "Pick Up"
-      } else if (marker.type === "party") {
-        test = "Party"
-      } else if (marker.type === "academics") {
-        test = "Academic"
-      }
-      if (test === selectedType) {
+      if (marker.type === selectedType) {
         marker.setMap(map);
       }
     });
