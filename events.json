@@ -15,7 +15,7 @@
     "type": "Party"
   },
   {
-    "Address": "Memorial Union",
+    "Address": "800 Langdon Street",
     "desc": "Meet and eat food at Mem U",
     "end": "2023-11-12 23:59:00",
     "name": "Lunch Meeting for UPL",
@@ -23,7 +23,7 @@
     "type": "Clubs"
   },
   {
-    "Address": "1415 Engineering Dr",
+    "Address": "1415 Engineering Drive",
     "desc": "Club Meeting",
     "end": "2023-11-12 11:59:00",
     "name": "Sports Analytic's",
