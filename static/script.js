@@ -12,8 +12,6 @@ async function initMap() {
   map = new Map(document.getElementById("map"), {
     center: { lat: 43.07, lng: -89.40 },
     zoom: 14,
-<<<<<<< HEAD
-
     styles: [
         {
           "featureType": "administrative.land_parcel",
@@ -72,10 +70,6 @@ async function initMap() {
     
 });
 
-=======
-  });
->>>>>>> backend
-
   const geocoder = new google.maps.Geocoder();
 
 locations.forEach(location => {
@@ -108,10 +102,6 @@ locations.forEach(location => {
         }
     });
 });
-<<<<<<< HEAD
-=======
-
->>>>>>> backend
 }
 
 initMap();
