@@ -2,16 +2,11 @@ let map;
 
 async function initMap() {
 
-  const locations = [
-    { address: "1440 Monroe St, Madison, WI 53711", description: "Sex" },
-    { address: "529 N Lake St, Madison, WI 53703", description: "fun" },
-    { address: "100 State St, Madison, WI 53703", description: "drugs" }];
-
   const { Map } = await google.maps.importLibrary("maps");
 
   map = new Map(document.getElementById("map"), {
-    center: { lat: 43.07, lng: -89.40 },
-    zoom: 14,
+    center: { lat: 43.07207615257759, lng: -89.40075908988423 },
+    zoom: 15,
     styles: [
         {
           "featureType": "administrative.land_parcel",
@@ -70,38 +65,42 @@ async function initMap() {
     
 });
 
-  const geocoder = new google.maps.Geocoder();
 
-locations.forEach(location => {
-    const { address, description } = location;
+const geocoder = new google.maps.Geocoder();
 
-    geocoder.geocode({ 'address': address }, function (results, status) {
-        if (status === google.maps.GeocoderStatus.OK) {
+  fetch("./events.json")
+    .then((response) => response.json())
+    .then((locations) => {
+      console.log(locations);
+
+      locations.forEach((location) => {
+        const { Address, name, type, start, end } = location;
+
+        geocoder.geocode({ address: Address }, function (results, status) {
+          if (status === google.maps.GeocoderStatus.OK) {
             const latitude = results[0].geometry.location.lat();
             const longitude = results[0].geometry.location.lng();
 
-            // Create a marker for each location
             const marker = new google.maps.Marker({
-                position: { lat: latitude, lng: longitude },
-                map: map,
-                title: description,
+              position: { lat: latitude, lng: longitude },
+              map: map,
+              title: name,
             });
 
-            // Example: Show an info window with the description
             const infoWindow = new google.maps.InfoWindow({
-                content: `<strong>${description}</strong><br>${address}`,
-            });
-            marker.addListener("click", () => {
-                infoWindow.open(map, marker);
+              content: `<strong>${name}</strong><br>${Address}<br>Type: ${type}<br>Start: ${start}<br>End: ${end}`,
             });
 
-            // Center the map on the last marker
-            map.setCenter({ lat: latitude, lng: longitude });
-        } else {
+            marker.addListener("click", () => {
+              infoWindow.open(map, marker);
+            });
+          } else {
             console.error("Geocoding failed:", status);
-        }
-    });
-});
+          }
+        });
+      });
+    })
+    .catch((error) => console.error("Error fetching JSON:", error));
 }
 
 initMap();
