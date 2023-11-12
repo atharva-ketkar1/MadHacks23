@@ -100,11 +100,7 @@ def callback():
 @app.route("/logout")
 def logout():
     session.clear()
-    params = {
-        "returnTo": url_for("home", _external=True),
-        "client_id": env.get("AUTH0_CLIENT_ID"),
-    }
-    return redirect(oauth.auth0.api_base_url + "/v2/logout?" + urlencode(params))
+    return redirect("/")
 
 @app.route("/submit", methods=["POST"])
 def submit():
