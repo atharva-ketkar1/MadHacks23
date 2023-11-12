@@ -65,6 +65,23 @@ async function initMap() {
     
 });
 
+const icons = {
+  academics: {
+    icon: "static/Academics.svg",
+  },
+  party: {
+    icon: "static/PartyIcon.png",
+  },
+  pickup: {
+    icon: "static/Pick Up.png",
+  },
+  clubs: {
+    icon: "static/extracurricular.png",
+  },
+  campusevents: {
+    icon: "static/Campus Events.png",
+  }
+};    
 
 const geocoder = new google.maps.Geocoder();
 
