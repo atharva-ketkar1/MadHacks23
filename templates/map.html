@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang = "en">
     <head>
-        <title>Map</title>
-        <link rel = "stylesheet" type = "text/css" href = "style.css">
+        <title>OpenInvite</title>
+        <link rel = "stylesheet" type = "text/css" href = "static\style.css">
+        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDraL3YowUl__tg7eu8DMI8Sd96GZEX9I&callback=initMap"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -16,17 +17,19 @@
                     <div class="container-fluid">
                         <div class="nav">
                             <div class="navbar-header">
-                                <a class="navbar-brand" href=""><img src="logo.png"  style = "position: relative; top: -7px;" height=200%></a>
+                                <a class="navbar-brand" href=""><img src="static\logo.png"  style = "position: relative; top: -7px;" height=200%></a>
                             </div>
                                 
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                <li><a href="\addEvent"><span class="glyphicon glyphicon-plus"></span>Add Event</a></li>
+                                <li><a href="\logout"><span class="glyphicon glyphicon-log-Out"></span>LogOut</a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
         </header>
+        <div id = "map"></div>
+        <script src = "static\script.js"></script>
 
         <footer class="page-footer font-small blue-grey lighten-5 mt-4">
             <div class="footer">
