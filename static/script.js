@@ -66,7 +66,7 @@ async function initMap() {
 
 const icons = {
   academics: {
-    icon: "static/Academics.svg",
+    icon: "static/Academics.png",
   },
   party: {
     icon: "static/PartyIcon.png",
