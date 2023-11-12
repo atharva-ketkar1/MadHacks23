@@ -159,7 +159,12 @@ def addEvent():
 @app.route("/map")
 def map():
     if session.get("user"):
-        updateEvents()
+        time = request.args.get('time')
+        if time:
+            time = datetime.strptime(time, "%Y-%m-%dT%H:%M")
+            updateEvents(time)
+        else:
+            updateEvents()
         return render_template("map.html")
     else:
         return redirect("/login")

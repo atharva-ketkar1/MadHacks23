@@ -13,5 +13,21 @@
     "name": "Random Party",
     "start": "2023-11-12 02:45:00",
     "type": "Party"
+  },
+  {
+    "Address": "Memorial Union",
+    "desc": "Meet and eat food at Mem U",
+    "end": "2023-11-12 23:59:00",
+    "name": "Lunch Meeting for UPL",
+    "start": "2023-11-12 10:29:00",
+    "type": "Clubs"
+  },
+  {
+    "Address": "1415 Engineering Dr",
+    "desc": "Club Meeting",
+    "end": "2023-11-12 11:59:00",
+    "name": "Sports Analytic's",
+    "start": "2023-11-12 10:34:00",
+    "type": "Clubs"
   }
 ]
