@@ -87,6 +87,7 @@ const geocoder = new google.maps.Geocoder();
   fetch("./events.json")
     .then((response) => response.json())
     .then((locations) => {
+      console.log(locations)
       renderMarkers(locations);
       setupTypeListeners();
     })
@@ -145,7 +146,19 @@ const geocoder = new google.maps.Geocoder();
     markers.forEach((marker) => marker.setMap(null));
 
     markers.forEach((marker) => {
-      if (marker.type === selectedType) {
+      test = ""
+      if (marker.type === "campusevents") {
+        test = "Campus Events"
+      } else if (marker.type === "clubs") {
+        test = "Clubs"
+      } else if (marker.type === "pickup") {
+        test = "Pick Up"
+      } else if (marker.type === "party") {
+        test = "Party"
+      } else if (marker.type === "academic") {
+        test = "Academic"
+      }
+      if (test === selectedType) {
         marker.setMap(map);
       }
     });

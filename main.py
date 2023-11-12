@@ -102,18 +102,11 @@ def callback():
 @app.route("/logout")
 def logout():
     session.clear()
-    return redirect(
-        "https://" + env.get("AUTH0_DOMAIN")
-        + "/v2/logout?"
-        + urlencode(
-            {
-                "returnTo": url_for("home", _external=True),
-                "client_id": env.get("AUTH0_CLIENT_ID"),
-            },
-            quote_via=quote_plus,
-        )
-    )
-
+    params = {
+        "returnTo": url_for("home", _external=True),
+        "client_id": env.get("AUTH0_CLIENT_ID"),
+    }
+    return redirect(oauth.auth0.api_base_url + "/v2/logout?" + urlencode(params))
 
 @app.route("/submit", methods=["POST"])
 def submit():
