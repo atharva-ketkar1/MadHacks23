@@ -104,7 +104,6 @@ const geocoder = new google.maps.Geocoder();
         if (status === google.maps.GeocoderStatus.OK) {
           const latitude = results[0].geometry.location.lat();
           const longitude = results[0].geometry.location.lng();
-
           const marker = new google.maps.Marker({
             position: { lat: latitude, lng: longitude },
             map: map,
