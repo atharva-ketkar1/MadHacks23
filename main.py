@@ -53,8 +53,8 @@ oauth.register(
     server_metadata_url=f'https://{env.get("AUTH0_DOMAIN")}/.well-known/openid-configuration'
 )
 
-def updateEvents():
-    current_datetime = datetime.now()
+def updateEvents(time=datetime.now()):
+    current_datetime = time
     query = {
         "start": {"$lte": current_datetime},
         "end": {"$gte": current_datetime}
@@ -140,7 +140,12 @@ def submit():
 
 @app.route("/")
 def home():
-    updateEvents()
+    time = request.args.get('time')
+    if time:
+        time = datetime.strptime(time, "%Y-%m-%dT%H:%M")
+        updateEvents(time)
+    else:
+        updateEvents()
     return render_template("index.html")
     
 
