@@ -109,7 +109,8 @@ const geocoder = new google.maps.Geocoder();
             position: { lat: latitude, lng: longitude },
             map: map,
             title: name,
-            type: type, 
+            type: type,
+            icon: icons[type].icon
           });
 
           const infoWindow = new google.maps.InfoWindow({
@@ -155,7 +156,7 @@ const geocoder = new google.maps.Geocoder();
         test = "Pick Up"
       } else if (marker.type === "party") {
         test = "Party"
-      } else if (marker.type === "academic") {
+      } else if (marker.type === "academics") {
         test = "Academic"
       }
       if (test === selectedType) {
