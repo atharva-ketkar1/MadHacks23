@@ -5,5 +5,13 @@
     "name": "MadHacks",
     "start": "2023-11-11 20:00:00",
     "type": "academic"
+  },
+  {
+    "Address": "502 North Frances Street",
+    "desc": "Random Party because I was bored",
+    "end": "2023-11-12 16:00:00",
+    "name": "Random Party",
+    "start": "2023-11-12 02:45:00",
+    "type": "party"
   }
 ]

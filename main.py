@@ -92,7 +92,6 @@ def events():
     with open("events.json") as json_file:
         data = json.load(json_file)
     return jsonify(data)
-<<<<<<< HEAD
     
 @app.route("/callback", methods=["GET", "POST"])
 def callback():
@@ -103,11 +102,18 @@ def callback():
 @app.route("/logout")
 def logout():
     session.clear()
-    params = {
-        "returnTo": url_for("home", _external=True),
-        "client_id": env.get("AUTH0_CLIENT_ID"),
-    }
-    return redirect(oauth.auth0.api_base_url + "/v2/logout?" + urlencode(params))
+    return redirect(
+        "https://" + env.get("AUTH0_DOMAIN")
+        + "/v2/logout?"
+        + urlencode(
+            {
+                "returnTo": url_for("home", _external=True),
+                "client_id": env.get("AUTH0_CLIENT_ID"),
+            },
+            quote_via=quote_plus,
+        )
+    )
+
 
 @app.route("/submit", methods=["POST"])
 def submit():
@@ -138,8 +144,6 @@ def submit():
     print(returnVal.acknowledged)
 
     return redirect("/map")
-=======
->>>>>>> backend
 
 @app.route("/")
 def home():

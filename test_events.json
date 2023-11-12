@@ -1,6 +1,0 @@
-[
-    {"id": 1, "name": "MadHacks","Address": "1440 Monroe St, Madison, WI 53711","type": "Academic","start": "2023-11-11 20:00:00","end": "2023-11-12 23:59:59"},
-    {"id": 2, "name": "soccer game","Address": "529 N Lake St, Madison, WI 53703","type": "Party","start": "2023-11-11 12:00:00","end": "2023-11-12 15:00:00"},
-    {"id": 3, "name": "MadHacks","Address": "100 State St, Madison, WI 53703","type": "Clubs","start": "2023-11-11 20:00:00","end": "2023-11-12 23:59:59"},
-    {"id": 4, "name": "MadHacks","Address": "1025 W. Johnson St","type": "Pickup","start": "2023-11-11 20:00:00","end": "2023-11-12 23:59:59"}
-]
