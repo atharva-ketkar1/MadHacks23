@@ -13,8 +13,6 @@ def events():
     with open("events.json") as json_file:
         data = json.load(json_file)
     return jsonify(data)
-    
-
 
 @app.route("/")
 def home():
