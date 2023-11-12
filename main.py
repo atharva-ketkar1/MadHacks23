@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify,json
 import pymongo
 from pymongo import MongoClient
 
@@ -7,6 +7,14 @@ db = cluster["OpenInvite"]
 collection = db["Markers"]
 
 app = Flask(__name__)
+
+@app.route("/events.json")
+def events():
+    with open("events.json") as json_file:
+        data = json.load(json_file)
+    return jsonify(data)
+    
+
 
 @app.route("/")
 def home():
